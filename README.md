@@ -2,15 +2,19 @@
 
 [CKEditor](http://ckeditor.com/) is a library for WYSIWYG editor to be used inside web pages.
 
-The `ckeditor_rails` gem integrates the `CKEditor` with the Rails asset pipeline.
+The `diet_ckeditor_rails` gem integrates the `CKEditor` with the Rails asset pipeline. It is
+based on Tse-Ching Ho's `ckeditor_rails` plugin. This gem removes all languages except english,
+removes all styles except v2, and removes a few extra plugins. Instructions at the end of
+this README tell you how you can create your own custom barebones ckeditor gem. By eliminating
+files you don't need, you can reduce the amount of time spent in precompilation.
 
 ## Usage
 
-### Install ckeditor_rails gem
+### Install diet_ckeditor_rails gem
 
-Include `ckeditor_rails` in Gemefile
+Include `diet_ckeditor_rails` in Gemfile
 
-    gem 'ckeditor_rails', :require => 'ckeditor-rails'
+    gem 'diet_ckeditor_rails', :require => 'diet-ckeditor-rails'
 
 Then run `bundle install`
 
@@ -51,11 +55,11 @@ Add your `app/assets/stylesheets/ckeditor/contents.css.scss` like
 
 ## Gem maintainance
 
-Maintain `ckeditor_rails` gem with `Rake` commands.
+Maintain `diet_ckeditor_rails` gem with `Rake` commands.
 
 Update origin CKEditor source files.
 
-    rake update-ckeditor VERSION=3.6.3
+    rake update-diet-ckeditor VERSION=3.6.3
 
 Publish gem.
 

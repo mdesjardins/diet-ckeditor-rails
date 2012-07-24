@@ -91,6 +91,23 @@ class SourceFile < Thor
     end
   end
 
+  desc "remove_wanted_files", "removes unused files from the gem"
+  def remove_unwanted_files(keep_language, keep_skin, remove_plugins)
+    puts "KEEPING LANGUAGE #{keep_language}"
+    puts "KEEPING SKIN #{keep_skin}"
+    puts "REMOVING_PLUGINS #{remove_plugins}"
+
+    Dir.glob("#{destination_root}/**/lang/[^_]*.js").each do |file|
+      remove_file file if File.basename(file) != "#{keep_language}.js"
+    end
+    Dir.glob("#{destination_root}/**/skins/*").each do |dir|
+      remove_dir dir if dir.split('/').last != keep_skin
+    end
+    Dir.glob("#{destination_root}/**/plugins/*").each do |dir|
+      remove_dir dir if remove_plugins.split(',').include? dir.split('/').last
+    end
+  end
+
   desc "clean", "clean up useless files"
   def cleanup
     self.destination_root = "vendor/assets"
