@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "diet_ckeditor_rails"
   gem.require_paths = ["lib"]
-  gem.version       = Ckeditor::Rails::VERSION
+  gem.version       = "#{Ckeditor::Rails::VERSION}.1"
 
   gem.add_dependency "railties", "~> 3.0"
   gem.add_dependency "thor",     "~> 0.14"
