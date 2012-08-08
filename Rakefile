@@ -9,7 +9,7 @@ task "update-diet-ckeditor" do
   files.move
   files.fix_css
   files.fix_js
-  files.remove_unwanted_files(ENV.fetch('KEEP_LANGUAGE','en'), ENV.fetch('KEEP_SKIN','v2'), ENV.fetch('REMOVE_PLUGINS','adobeair,devtools,flash'))
+  files.remove_unwanted_files(ENV.fetch('KEEP_LANGUAGE','en'), ENV.fetch('KEEP_SKIN','kama'), ENV.fetch('REMOVE_PLUGINS','adobeair,devtools,flash'))
   files.cleanup
 end
 
